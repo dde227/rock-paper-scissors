@@ -12,20 +12,33 @@ print("-------------------")
 print("Welcome",player_name,"to my Rock-Paper-Scissors game...")
 print("-------------------")
 
-user_choice = input("Please choose one of 'rock', 'paper', 'scissors': ")
+user_choice = input("Please choose either 'rock', 'paper', 'scissors': ")
 
-print("USER CHOICE: ", user_choice)
+print("You chose: '" + user_choice + "'")
 
+if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissors"):
+    
+    valid_options = ["rock","paper","scissors"]
+    computer_choice = random.choice(valid_options)
+    print("The computer chose: '" + computer_choice + "'")
+    print("-------------------")
 
+    if user_choice == computer_choice:
+        print("It's a tie!")
+    elif (user_choice == "scissors") and (computer_choice == "paper"):
+        print("Hurray, you win!")
+    elif (user_choice == "rock") and (computer_choice == "scissors"):
+        print("Hurray, you win!")
+    elif (user_choice == "paper") and (computer_choice == "rock"):
+        print("Hurray, you win!")
+    else:
+        print("Oh, the computer won. It's ok.")
 
-if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissor"):
-    print("VALID USER CHOISE. KEEP GOING.")
 else:    
-    print("OOPS, INVALID INPUT. PLEASE TRY AGAIN.")
+    print("-------------------")
+    print("Oops, invalid input. Please try again.")
     exit()
 
-valid_options = ["rock","paper","scissor"]
-computer_choice = random.choice(valid_options)
-print("COMPUTER CHOICE: ",computer_choice)
+print("-------------------")
 
-print("THIS IS THE END OF OUR GAME. PLEASE PLAY AGAIN.")
+print("Thanks for playing. Please play again!")
